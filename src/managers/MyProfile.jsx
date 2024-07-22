@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../assets/profile.png";
+import profile from '../assets/profile.png'
 import { MdVerifiedUser } from "react-icons/md";
 import { MdContentCopy } from "react-icons/md";
 import { useState } from "react";
@@ -19,7 +19,7 @@ const MyProfile = () => {
   return (
     <div className="w-full h-fit">
       <div className="flex relative">
-      {user? (
+      {user? user.avatar? (
           <div className="w-28 h-28 rounded-full overflow-hidden">
           <img
             src={user.avatar}
@@ -31,7 +31,7 @@ const MyProfile = () => {
           src={profile}
           alt="avatar"
           className="w-28 h-28 ml-9 scroll-mt-8 rounded-full mt-6"
-        />)}
+        />) : (<img src={profile } alt="avatar" className="w-28 h-28 ml-9 scroll-mt-8 rounded-full mt-6" />)}
         {/* {user.avatar? (
           <div className="w-28 h-28 rounded-full overflow-hidden">
           <img
@@ -52,21 +52,21 @@ const MyProfile = () => {
             className="w-28 h-28 ml-9 scroll-mt-8 rounded-full mt-6"
           />
         )} */}
-        {user? (
+        {user?user.isVerified? (
           <span
             className="font-semibold absolute bottom-1 left-36 flex gap-1"
             style={{ color: "#6D38C3" }}
           >
             Verified <MdVerifiedUser size={20} />
           </span>
-        ):""}
+        ):"" : ""}
       </div>
 
       <div className="mt-9 mx-8">
         <div className="grid gap-x-8 gap-y-9 grid-cols-2">
           <div>
             <h1 className="font-light">Name</h1>
-            <p className="text-xl" style={{ fontWeight: "430" }}>
+            <p className="text-xl overflow-hidden" style={{ fontWeight: "430" }}>
               {user? user.fullName : "Abhijit"}
             </p>
           </div>
@@ -79,7 +79,7 @@ const MyProfile = () => {
           </div>
           <div>
             <h1 className="font-light">Citizenship</h1>
-            <p className={`text-xl`} style={{ fontWeight: "430" }}>
+            <p className={`text-xl overflow-hidden`} style={{ fontWeight: "430" }}>
                Indian
               {/* {user.primaryContactNumber.countryCode === "+91" && "Indian"}
               {user.primaryContactNumber.countryCode === "+1" && "American"}
@@ -104,12 +104,12 @@ const MyProfile = () => {
           <div>
             <h1 className="font-light">Date of Birth</h1>
             <p
-              className={` ${user ? "text-xl" : "text-red-600"}`}
+              className={` ${user ? user.DOB? "text-xl" : "text-red-600" : "text-red-600"}`}
               style={{ fontWeight: `${user ? "430" : ""}` }}
             >
               {user
-                ? user.DOB
-                : "Please Verify your ID for more information"}
+                ? user.DOB?user.DOB.split("T")[0]
+                : "Please Verify your ID for more information" : "Please Verify your ID for more information"}
             </p>
           </div>
           <div className="relative">
@@ -123,7 +123,7 @@ const MyProfile = () => {
         </div>
       </div>
 
-      {user ? <p className="font-light m-8 mt-10 text-sm text-gray-400">This information can't be edited as it is fetched by your government issued document</p> : ""}
+      {user ? user.isVerified ? <p className="font-light m-8 mt-10 text-sm text-gray-400">This information can't be edited as it is fetched by your government issued document</p> : "" : ""}
     </div>
   );
 };

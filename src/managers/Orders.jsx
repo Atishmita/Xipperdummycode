@@ -6,6 +6,9 @@ import { MdCancel } from "react-icons/md";
 import { IoMicOutline } from "react-icons/io5";
 import Famphoto from '../assets/profile.png';
 import { IoIosArrowDown } from "react-icons/io";
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { DateRangePicker } from "react-date-range";
 
 const orders = [
   {
@@ -13,7 +16,11 @@ const orders = [
     brandImage: Famphoto,
     orderId: "#C-004560",
     orderDate: "27 March 2020",
+<<<<<<< HEAD
     orderItem: "Men's Black King Of Curses Sukuna Printed T-shirt",
+=======
+    orderItem: "Men's Black King Of Curses Sukuna Graphic Printed",
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
     address: "HOME",
     amount: "$78.92",
     status: "Delivered"
@@ -23,7 +30,11 @@ const orders = [
     brandImage: Famphoto,
     orderId: "#C-004560",
     orderDate: "27 March 2020",
+<<<<<<< HEAD
     orderItem: "Men's Black King Of Curses Sukuna Printed T-shirt",
+=======
+    orderItem: "Men's Black King Of Curses Sukuna Graphic Printed",
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
     address: "HOME",
     amount: "$78.92",
     status: "Delivered"
@@ -33,7 +44,11 @@ const orders = [
     brandImage: Famphoto,
     orderId: "#C-004560",
     orderDate: "27 March 2020",
+<<<<<<< HEAD
     orderItem: "Men's Black King Of Curses Sukuna Printed T-shirt",
+=======
+    orderItem: "Men's Black King Of Curses Sukuna Graphic Printed",
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
     address: "HOME",
     amount: "$78.92",
     status: "Delivered"
@@ -43,7 +58,11 @@ const orders = [
     brandImage: Famphoto,
     orderId: "#C-004560",
     orderDate: "27 March 2020",
+<<<<<<< HEAD
     orderItem: "Men's Black King Of Curses Sukuna Printed T-shirt",
+=======
+    orderItem: "Men's Black King Of Curses Sukuna Graphic Printed",
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
     address: "HOME",
     amount: "$78.92",
     status: "Delivered"
@@ -53,7 +72,11 @@ const orders = [
     brandImage: Famphoto,
     orderId: "#C-004560",
     orderDate: "27 March 2020",
+<<<<<<< HEAD
     orderItem: "Men's Black King Of Curses Sukuna Printed T-shirt",
+=======
+    orderItem: "Men's Black King Of Curses Sukuna Graphic Printed",
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
     address: "HOME",
     amount: "$78.92",
     status: "Delivered"
@@ -63,7 +86,11 @@ const orders = [
     brandImage: Famphoto,
     orderId: "#C-004560",
     orderDate: "27 March 2020",
+<<<<<<< HEAD
     orderItem: "Men's Black King Of Curses Sukuna Printed T-shirt",
+=======
+    orderItem: "Men's Black King Of Curses Sukuna Graphic Printed",
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
     address: "HOME",
     amount: "$78.92",
     status: "Delivered"
@@ -73,7 +100,11 @@ const orders = [
     brandImage: Famphoto,
     orderId: "#C-004560",
     orderDate: "27 March 2020",
+<<<<<<< HEAD
     orderItem: "Men's Black King Of Curses Sukuna Printed T-shirt",
+=======
+    orderItem: "Men's Black King Of Curses Sukuna Graphic Printed",
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
     address: "HOME",
     amount: "$78.92",
     status: "Delivered"
@@ -83,7 +114,11 @@ const orders = [
     brandImage: Famphoto,
     orderId: "#C-004560",
     orderDate: "27 March 2020",
+<<<<<<< HEAD
     orderItem: "Men's Black King Of Curses Sukuna Printed T-shirt",
+=======
+    orderItem: "Men's Black King Of Curses Sukuna Graphic Printed",
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
     address: "HOME",
     amount: "$78.92",
     status: "Delivered"
@@ -93,7 +128,11 @@ const orders = [
     brandImage: Famphoto,
     orderId: "#C-004560",
     orderDate: "27 March 2020",
+<<<<<<< HEAD
     orderItem: "Men's Black King Of Curses Sukuna Printed T-shirt",
+=======
+    orderItem: "Men's Black King Of Curses Sukuna Graphic Printed",
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
     address: "HOME",
     amount: "$78.92",
     status: "Delivered"
@@ -143,14 +182,40 @@ const Order = () => {
     };
   }, []);
 
+
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+
+  const selectionRange = {
+    startDate: startDate,
+    endDate: endDate,
+    key: 'selection',
+  }
+
+  const handleDateChange = (date) => {
+    setStartDate(date.selection.startDate);
+    setEndDate(date.selection.endDate);
+  }
+
+  const [showCalendar, setShowCalendar] = useState(false);
+ 
+
   return (
     <div className="h-screen overflow-y-hidden flex flex-col">
       <Navbar orders={true} />
       <div className="w-full relative h-full flex-grow overflow-y-auto" style={{ backgroundColor: "#F5F6FA" }}>
+<<<<<<< HEAD
         <div className="w-full flex items-center p-5 pr-10 pl-10 space-x-10">
           <div className="bg-white p-1.5 pl-4 pr-4 flex items-center border-gray-300 border z-30 rounded-lg focus:outline-none whitespace-nowrap">
             <span className="text-sm text-black " style={{ fontWeight: "500", color: "rgb(0,0,0,0.6)" }}>Total spends:</span>
             <span className="text-xl ml-1" style={{ fontWeight: "600", color: "#6D38C3" }}>Rs. 15000</span>
+=======
+        <div className="w-full flex justify-around items-center p-5 pr-10 pl-10 space-x-10">
+          <div className="bg-white p-0.5 pl-4 pr-4 flex items-center border-gray-300 border z-40 rounded-lg focus:outline-none">
+            <span style={{ fontWeight: "500", fontSize: "12px", color: "rgb(0,0,0,0.6)" }} className="text-black">Total spends:</span>
+            <span style={{ fontWeight: "600", fontSize: "24px", color: "#6D38C3" }} className="ml-1">Rs. 15000</span>
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
           </div>
           <div className="flex gap-6 pl-20">
             <span className="relative h-full">
@@ -167,10 +232,26 @@ const Order = () => {
                 <IoMicOutline color="gray" size={20} />
               </span>
             </span>
+<<<<<<< HEAD
             <span className="bg-white p-2 pl-4 pr-4 flex items-center flex-grow border-gray-300 border z-30 rounded-lg focus:outline-none">
               <FaCalendarAlt className="mr-2 text-gray-500 text-xs" />
               <span className="text-sm pt-0.5 whitespace-nowrap" style={{ fontWeight: "500", color: "rgb(0,0,0,0.6)" }}>Choose Date</span>
             </span>
+=======
+            <span onClick={()=>setShowCalendar(!showCalendar)} className={` hover:bg-gray-200 cursor-pointer p-2 pl-4 pr-4 text-sm z-30 rounded-lg focus:outline-none ${showCalendar? "bg-gray-200" : "bg-white"}`}>
+
+              Choose Date: {startDate.toLocaleDateString()} - {endDate.toLocaleDateString()} 
+              </span>
+              {/* <input value={selectedDate} onChange={(e)=>setSelectedDate(e.target.value)} className="p-1 rounded-lg border-gray-300 border" type="date" name="" id="" /> */}
+              <div className={`absolute z-50 top-20 border rounded-xl shadow-xl left-1/2 ${showCalendar? "" : "hidden"}`}>
+              <DateRangePicker
+              rangeColors={["#6D38C3"]}
+        ranges={[selectionRange]}
+        onChange={handleDateChange}
+      />
+      </div>
+            
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
           </div>
           <div className="flex gap-6 pl-10">
             <span className="bg-[#6D38C3] p-2 pl-4 pr-4 flex items-center flex-grow border-gray-300 border z-30 rounded-lg focus:outline-none">
@@ -210,7 +291,11 @@ const Order = () => {
         </div>
         <div className="w-full px-8 pt-0.5 pb-10">
           <div className="text-white rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-2xl p-3 pl-8 pr-8" style={{ background: "#6D38C3" }}>
+<<<<<<< HEAD
             <div className="grid grid-cols-10 font-semibold text-md" style={{ fontWeight: "600" }}>
+=======
+            <div className="grid grid-cols-10 font-semibold" style={{ fontWeight: "600", fontSize: "20px" }}>
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
               <div>Brand Name</div>
               <div>Order ID</div>
               <div>Order Date</div>
@@ -223,7 +308,11 @@ const Order = () => {
           </div>
           {orders.map((order, index) => (
             <div key={index} className="bg-white shadow mt-4 rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-2xl">
+<<<<<<< HEAD
               <div className="grid grid-cols-10 gap-4 items-center p-1 pl-8 pr-8 text-sm" style={{ fontWeight: "500" }}>
+=======
+              <div className="grid grid-cols-10 gap-1 items-center p-1 pl-8 pr-8" style={{ fontWeight: "500", fontSize: "16px" }}>
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
                 <div className="flex items-center">
                   <img
                     src={order.brandImage}
@@ -232,6 +321,7 @@ const Order = () => {
                   />
                   {order.brandName}
                 </div>
+<<<<<<< HEAD
                 <div>{order.orderId}</div>
                 <div>{order.orderDate}</div>
                 <div className="col-span-3 overflow-x-hidden">{order.orderItem}</div>
@@ -240,6 +330,16 @@ const Order = () => {
                 <div style={{ color: "#03D603" }}>{order.status}</div>
                 <div className="flex justify-center">
                   <button className="border border-gray-200 rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-2xl p-2 text-sm ml-4" style={{ fontWeight: 500, color: "rgba(0, 0, 0, 0.6)" }}>View More</button>
+=======
+                <div className="overflow-hidden">{order.orderId}</div>
+                <div className="overflow-hidden">{order.orderDate}</div>
+                <div className="col-span-3 overflow-x-hidden w-fit">{order.orderItem}</div>
+                <div className="overflow-hidden">{order.address}</div>
+                <div className="overflow-hidden">{order.amount}</div>
+                <div className="overflow-hidden" style={{ color: "#03D603" }}>{order.status}</div>
+                <div style={{ color: "rgba(0, 0, 0, 0.1)" }} className="flex justify-center">
+                  <button className="border border-gray-200 rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-2xl p-2" style={{ fontSize: "12px", fontWeight: 500, color: "rgba(0, 0, 0, 0.6)" }}>View More</button>
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
                 </div>
               </div>
             </div>

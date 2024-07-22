@@ -7,8 +7,92 @@ import { IoSearch } from "react-icons/io5";
 import { GrMicrophone } from "react-icons/gr";
 import { useEffect, useState, useRef } from "react";
 import Navbar from "./Navbar.jsx";
+import axios from "axios";
+import { BASE_URL } from "./helper.js";
 
 const Homepage = () => {
+
+
+  useEffect(() => {
+
+    async function getEducation(){
+      await axios.post(`${BASE_URL}/education/get`, {
+        XipperID: JSON.parse(localStorage.getItem("user")).XipperID
+      },{
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+      .then((res)=>{
+        console.log(res.data);
+        sessionStorage.setItem("education", JSON.stringify(res.data.data));
+      })
+      .catch((err)=>{
+        console.log(err);
+      });
+
+      
+    }
+    getEducation();
+
+    async function getDocs (){
+      
+      let data = JSON.stringify({
+        "userId": JSON.parse(localStorage.getItem("user"))._id,
+        "XipperID": JSON.parse(localStorage.getItem("user")).XipperID
+      });
+      
+      let config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'http://localhost:8000/api/docs',
+        headers: { 
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0OTQ0ZDY2YTFkNzcwODZlNWU2ODgiLCJpYXQiOjE3MjExMDQ5NDgsImV4cCI6MTcyMzY5Njk0OH0.UAuN3s20NDL2WyZmDneU8i2WE9EJDLXZUMZXIZKzTRM', 
+          'Content-Type': 'application/json'
+        },
+        data : data
+      };
+      
+      await axios.request(config)
+      .then((response) => {
+        console.log(response.data);
+        localStorage.setItem("docs", JSON.stringify(response.data.data.docs));
+      })
+      .catch((error) => {
+        localStorage.setItem("docs", JSON.stringify({}));
+      });
+    }
+    getDocs();
+
+    
+
+  }, []);
+
+  useEffect(() => {
+    async function getEducation(){
+      await axios.post(`${BASE_URL}/education/get`, {
+        XipperID: JSON.parse(localStorage.getItem("user")).XipperID
+      },{
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+      .then((res)=>{
+        console.log(res.data);
+        sessionStorage.setItem("education", JSON.stringify(res.data.data));
+      })
+      .catch((err)=>{
+        console.log(err);
+      });
+
+      
+    }
+    getEducation();
+  }, []);
+
+
   const imgRef = useRef(null);
 
   const [searchFor, setSearchFor] = useState(homepage1);

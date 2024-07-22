@@ -2,7 +2,11 @@ import React from 'react';
 import Navbar from './Navbar.jsx';
 import { IoLocationOutline } from "react-icons/io5";
 import { BsThreeDotsVertical, BsHeart } from 'react-icons/bs';
+<<<<<<< HEAD
 import hotel from "../assets/hotel.jpeg"
+=======
+import hotel from "../assets/homepage1.svg"
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
 
 
 const Offers = () => {
@@ -11,12 +15,31 @@ const Offers = () => {
     { name: "Hotel Radisson Blue", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
     { name: "Mariot", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
     { name: "The Plaza", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+<<<<<<< HEAD
   ];
 
   return (
     <div className='h-screen flex flex-col overflow-x-scroll'>
       <Navbar profile={true} />
       <div className='flex flex-col overflow-y-auto bg-[#F5F6FA]'>
+=======
+    { name: "Hotel Radisson Blue", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+    { name: "Mariot", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+    { name: "The Plaza", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+    { name: "Hotel Radisson Blue", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+    { name: "Mariot", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+    { name: "The Plaza", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+    { name: "The Plaza", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+    { name: "Hotel Radisson Blue", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+    { name: "Mariot", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+    { name: "The Plaza", location: "Vijaynagar, Indore | 1.1 Km from silicon city", image: hotel },
+  ];
+
+  return (
+    <div className='bg-[#F5F6FA]'>
+      <Navbar offers={true} />
+      <div className='flex flex-col overflow-y-auto'>
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
         <div className='flex justify-between items-center px-20 py-10'>
           <h1 className='text-4xl font-bold' style={{fontWeight:"600"}}>
             Offers!! <span className='text-[#6D38C3] ml-2'>picked for you</span>
@@ -35,16 +58,25 @@ const Offers = () => {
           </div>
         </div>
         <div>
+<<<<<<< HEAD
         <div className='flex justify-around px-20 gap-x-20 pt-0'>
           {hotels.map((hotel, index) => (
             <div
               key={index}
               className='relative w-1/3  top-0 '
+=======
+        <div className='flex flex-wrap justify-around gap-x-1 pt-0'>
+          {hotels.map((hotel, index) => (
+            <div
+              key={index}
+              className='relative mt-10 w-1/4  top-0 '
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
             >
               <div className='relative '>
                 <img
                   src={hotel.image}
                   alt={hotel.name}
+<<<<<<< HEAD
                   className='w-full h-48  rounded-lg'
                 />
                 <div className='absolute top-0 left-0 w-full h-full bg-black opacity-40 rounded-lg'></div>
@@ -78,6 +110,9 @@ const Offers = () => {
                   src={hotel.image}
                   alt={hotel.name}
                   className='w-full h-48  rounded-lg'
+=======
+                  className='w-full h-full  rounded-lg'
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
                 />
                 <div className='absolute top-0 left-0 w-full h-full bg-black opacity-40 rounded-lg'></div>
                 <div className='absolute top-4 right-4 flex gap-2'>
@@ -99,10 +134,18 @@ const Offers = () => {
             </div>
           ))}
         </div>
+<<<<<<< HEAD
+=======
+         
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
         </div>
       </div>
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default Offers;
+=======
+export default Offers;
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948

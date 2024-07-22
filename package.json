@@ -10,18 +10,38 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@firebase/app": "^0.10.5",
     "@firebase/auth": "^1.7.4",
+    "@mui/material": "^5.16.1",
+    "@mui/x-charts": "^7.11.0",
+    "@mui/x-date-pickers": "^7.10.0",
+    "@mui/x-date-pickers-pro": "^7.10.0",
+    "@react-google-maps/api": "^2.19.3",
     "axios": "^1.7.2",
+    "current-location-geo": "^1.1.5",
+    "dayjs": "^1.11.11",
     "firebase": "^10.12.2",
     "firebase-auth": "^0.1.2",
     "react": "^18.3.1",
+    "react-date-range": "^2.0.1",
     "react-dom": "^18.3.1",
+    "react-geocode": "^1.0.0-alpha.1",
+    "react-google-autocomplete": "^2.7.3",
+    "react-google-places-autocomplete": "^4.0.1",
     "react-hot-toast": "^2.4.1",
     "react-icons": "5.2.1",
     "react-loader-spinner": "^6.1.6",
-    "react-router-dom": "^6.24.0",
+<<<<<<< HEAD
+    "react-router-dom": "^6.25.1",
     "react-spinners": "^0.14.1"
+=======
+    "react-places-autocomplete": "^7.3.0",
+    "react-router-dom": "^6.24.0",
+    "react-spinners": "^0.14.1",
+    "socket.io-client": "^4.7.5"
+>>>>>>> 02171ddab21c9c9d3f00fe063626dd254a84c948
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
